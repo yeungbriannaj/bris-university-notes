@@ -6,7 +6,7 @@
         "year": 2023,
         "semester_num": 2,
         "category": "compsci",
-        "image": "images/default.png",
+        "image": "images/CS110.png",
         "documents": []
     },
     {
@@ -16,7 +16,7 @@
         "year": 2024,
         "semester_num": 0,
         "category": "compsci",
-        "image": "images/default.png",
+        "image": "images/CS130.png",
         "documents": []
     },
     {
@@ -26,7 +26,7 @@
         "year": 2024,
         "semester_num": 1,
         "category": "compsci",
-        "image": "images/210_S.png",
+        "image": "images/CS210.png",
         "documents": [
             {
                 "name": "210 Slides",
@@ -42,7 +42,7 @@
         "year": 2024,
         "semester_num": 1,
         "category": "compsci",
-        "image": "images/220_S.png",
+        "image": "images/CS220.png",
         "documents": [
             {
                 "name": "220 Slides",
@@ -58,7 +58,7 @@
         "year": 2025,
         "semester_num": 0,
         "category": "mgmt",
-        "image": "images/default.png",
+        "image": "images/MGMT223.png",
         "documents": []
     },
     {
@@ -68,7 +68,7 @@
         "year": 2024,
         "semester_num": 2,
         "category": "compsci",
-        "image": "images/230_C.png",
+        "image": "images/CS230.png",
         "documents": [
             {
                 "name": "230 Cheatsheet",
@@ -84,7 +84,7 @@
         "year": 2025,
         "semester_num": 1,
         "category": "busan",
-        "image": "images/default.png",
+        "image": "images/BUSAN300.png",
         "documents": []
     },
     {
@@ -94,7 +94,7 @@
         "year": 2025,
         "semester_num": 1,
         "category": "busan",
-        "image": "images/default.png",
+        "image": "images/BUSAN302.png",
         "documents": []
     },
     {
@@ -104,7 +104,7 @@
         "year": 2024,
         "semester_num": 2,
         "category": "innovent",
-        "image": "images/default.png",
+        "image": "images/INNOVENT309.png",
         "documents": []
     },
     {
@@ -114,7 +114,7 @@
         "year": 2024,
         "semester_num": 2,
         "category": "compsci",
-        "image": "images/316_S.png",
+        "image": "images/CS316.png",
         "documents": [
             {
                 "name": "316 Slides",
@@ -130,7 +130,7 @@
         "year": 2024,
         "semester_num": 2,
         "category": "stats",
-        "image": "images/330_C.png",
+        "image": "images/STATS330.png",
         "documents": [
             {
                 "name": "330 Cheatsheet",
@@ -146,7 +146,7 @@
         "year": 2025,
         "semester_num": 1,
         "category": "compsci",
-        "image": "images/345_D.png",
+        "image": "images/CS345.png",
         "documents": [
             {
                 "name": "345 Document",
@@ -162,7 +162,7 @@
         "year": 2025,
         "semester_num": 1,
         "category": "stats",
-        "image": "images/380_D.png",
+        "image": "images/STATS380.png",
         "documents": [
             {
                 "name": "380 Slides",
@@ -188,7 +188,7 @@
         "year": 2025,
         "semester_num": 2,
         "category": "compsci",
-        "image": "images/default.png",
+        "image": "images/CS235.png",
         "documents": []
     },
     {
@@ -198,7 +198,7 @@
         "year": 2025,
         "semester_num": 2,
         "category": "compsci",
-        "image": "images/default.png",
+        "image": "images/CS335.png",
         "documents": []
     },
     {
@@ -208,7 +208,7 @@
         "year": 2025,
         "semester_num": 2,
         "category": "compsci",
-        "image": "images/default.png",
+        "image": "images/BUSAN305.png",
         "documents": []
     }
 ]
