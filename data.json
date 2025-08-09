@@ -156,19 +156,14 @@
                 "path": "notes/316_S.pdf"
             },
             {
-                "name": "316 Tutorials",
-                "type": "Tutorials",
-                "path": "notes/316_T.pdf"
-            },
-            {
                 "name": "316 Documents",
                 "type": "Week 1-6",
-                "path": "notes/316_D_W1_6.pdf"
+                "path": "notes/316_D.pdf"
             },
             {
                 "name": "316 Documents",
                 "type": "Week 8-9",
-                "path": "notes/316_D_W8_9.pdf"
+                "path": "notes/316_D2.pdf"
             }            
         ]
     },
@@ -189,7 +184,7 @@
             {
                 "name": "330 Document", 
                 "type": "Handout 15-16",
-                "path": "notes/330_H15_16.pdf"
+                "path": "notes/330_D.pdf"
             }            
         ]
     },
