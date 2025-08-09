@@ -1,27 +1,49 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
 
-    // --- 1. GET ALL THE DOM ELEMENTS ---
+    function applyTheme(theme) {
+        if (theme === 'dark') {
+            body.classList.add('dark-mode');
+            themeToggle.checked = true;
+        } else {
+            body.classList.remove('dark-mode');
+            themeToggle.checked = false;
+        }
+    }
+
+    themeToggle.addEventListener('change', () => {
+        const newTheme = themeToggle.checked ? 'dark' : 'light';
+        applyTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
+    });
+
+    const savedTheme = localStorage.getItem('theme') || 'light';
+
+    if (savedTheme === 'dark') {
+        body.classList.add('dark-mode');
+        
+    }
+    applyTheme(savedTheme);
+
     const cardContainer = document.getElementById('card-container');
     const searchInput = document.getElementById('searchInput');
     const subjectFilter = document.getElementById('subject-filter');
     const yearFilter = document.getElementById('year-filter');
     const levelFilter = document.getElementById('level-filter');
     const sortBy = document.getElementById('sort-by');
-    let allCourses = []; // This will store our master list of courses
+    let allCourses = []; //Store master list of courses
 
-    // --- 2. THE MASTER FUNCTION TO APPLY FILTERS AND SORT ---
+    // THE MASTER FUNCTION TO APPLY FILTERS AND SORT ---
     function applyFiltersAndSort() {
-        // Get the current values from all the controls
         const searchTerm = searchInput.value.toLowerCase();
         const selectedSubject = subjectFilter.value;
         const selectedYear = yearFilter.value;
         const selectedLevel = levelFilter.value;
         const sortValue = sortBy.value;
 
-        // Start with the full list of courses
         let filteredCourses = allCourses;
 
-        // --- FILTERING LOGIC ---
         // Filter by Search Term (Title or Description)
         if (searchTerm) {
             filteredCourses = filteredCourses.filter(course =>
@@ -37,15 +59,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (selectedYear !== 'all') {
             filteredCourses = filteredCourses.filter(course => course.year.toString() === selectedYear);
         }
-        // Filter by Level (e.g., 100, 200, 300)
+        // Filter by Level
         if (selectedLevel !== 'all') {
             filteredCourses = filteredCourses.filter(course => 
                 Math.floor(parseInt(course.id) / 100) * 100 === parseInt(selectedLevel)
             );
         }
 
-        // --- SORTING LOGIC ---
-        // The .sort() method modifies the array in place
+        // .sort() modifies the array in place
         filteredCourses.sort((a, b) => {
             if (sortValue === 'id_asc') {
                 return parseInt(a.id) - parseInt(b.id);
@@ -64,14 +85,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 return a.semester_num - b.semester_num;
             }
         });
-
-        // Finally, render the filtered and sorted cards
         renderCards(filteredCourses);
     }
 
-    // --- 3. RENDER CARDS FUNCTION ---
     function renderCards(coursesToRender) {
-        cardContainer.innerHTML = ''; // Clear existing cards
+        cardContainer.innerHTML = '';
         coursesToRender.forEach(course => {
             const cardHTML = `
                 <div class="course-card" data-category="${course.category}">
@@ -90,7 +108,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 4. FETCH DATA AND INITIALIZE ---
     fetch('data.json')
         .then(response => response.json())
         .then(courses => {
@@ -99,8 +116,6 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(error => console.error('Error fetching course data:', error));
 
-    // --- 5. ADD EVENT LISTENERS ---
-    // Add listeners to all controls to re-run the filter function on any change
     searchInput.addEventListener('keyup', applyFiltersAndSort);
     subjectFilter.addEventListener('change', applyFiltersAndSort);
     yearFilter.addEventListener('change', applyFiltersAndSort);

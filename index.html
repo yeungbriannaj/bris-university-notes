@@ -1,64 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Bri's University Notes</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <header>
-        <h1>Bri's University Notes</h1>
-        <input type="text" id="searchInput" placeholder="Search...">
-        <div id="filter-controls">
-            <div class="control-group">
-                <label for="subject-filter">Subject</label>
-                <select id="subject-filter">
-                    <option value="all">All</option>
-                    <option value="compsci">COMPSCI</option>
-                    <option value="stats">STATS</option>
-                    <option value="busan">BUSAN</option>
-                    <option value="mgmt">MGMT</option>
-                    <option value="innovent">INNOVENT</option>
-                </select>
-            </div>
-            
-            <div class="control-group">
-                <label for="year-filter">Year</label>
-                <select id="year-filter">
-                    <option value="all">All</option>
-                    <option value="2025">2025</option>
-                    <option value="2024">2024</option>
-                    <option value="2023">2023</option>
-                </select>
-            </div>
+      <div id="theme-switcher">
+        <input type="checkbox" id="theme-toggle" />
+        <label for="theme-toggle" class="toggle-label"></label>
+      </div>
 
-            <div class="control-group">
-                <label for="level-filter">Level</label>
-                <select id="level-filter">
-                    <option value="all">All</option>
-                    <option value="100">100-Level</option>
-                    <option value="200">200-Level</option>
-                    <option value="300">300-Level</option>
-                </select>
-            </div>
-
-            <div class="control-group">
-                <label for="sort-by">Sort By</label>
-                <select id="sort-by">
-                    <option value="id_asc">Course Code (Asc)</option>
-                    <option value="id_desc">Course Code (Desc)</option>
-                    <option value="year_desc">Year (Newest First)</option>
-                    <option value="year_asc">Year (Oldest First)</option>
-                </select>
-            </div>
+      <h1>Bri's University Notes</h1>
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search by title or description..."
+      />
+      <div id="filter-controls">
+        <div class="control-group">
+          <label for="subject-filter">Subject</label>
+          <select id="subject-filter">
+            <option value="all">All</option>
+            <option value="compsci">COMPSCI</option>
+            <option value="stats">STATS</option>
+            <option value="busan">BUSAN</option>
+            <option value="mgmt">MGMT</option>
+            <option value="innovent">INNOVENT</option>
+          </select>
         </div>
+
+        <div class="control-group">
+          <label for="year-filter">Year</label>
+          <select id="year-filter">
+            <option value="all">All</option>
+            <option value="2025">2025</option>
+            <option value="2024">2024</option>
+            <option value="2023">2023</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="level-filter">Level</label>
+          <select id="level-filter">
+            <option value="all">All</option>
+            <option value="100">100-Level</option>
+            <option value="200">200-Level</option>
+            <option value="300">300-Level</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="sort-by">Sort By</label>
+          <select id="sort-by">
+            <option value="id_asc">Course Code (Asc)</option>
+            <option value="id_desc">Course Code (Desc)</option>
+            <option value="year_desc">Year (Newest First)</option>
+            <option value="year_asc">Year (Oldest First)</option>
+          </select>
+        </div>
+      </div>
     </header>
 
-    <main id="card-container">
-    </main>
+    <main id="card-container"></main>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
