@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sortBy = document.getElementById('sort-by');
     let allCourses = []; //Store master list of courses
 
-    // THE MASTER FUNCTION TO APPLY FILTERS AND SORT ---
+    // THE MASTER FUNCTION TO APPLY FILTERS AND SORT
     function applyFiltersAndSort() {
         const searchTerm = searchInput.value.toLowerCase();
         const selectedSubject = subjectFilter.value;
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
             );
         }
 
-        // .sort() modifies the array in place
+        // .sort() the array in place
         filteredCourses.sort((a, b) => {
             if (sortValue === 'id_asc') {
                 return parseInt(a.id) - parseInt(b.id);
@@ -120,15 +120,15 @@ document.addEventListener('DOMContentLoaded', () => {
         allCourses = courses;
         searchIndex = index;
         console.log("Search Index Loaded:", searchIndex); 
-        applyFiltersAndSort(); // Perform an initial render
+        applyFiltersAndSort();
     })
     .catch(error => console.error('Error fetching data:', error));
 
     fetch('data.json')
         .then(response => response.json())
         .then(courses => {
-            allCourses = courses; // Store the master list
-            applyFiltersAndSort(); // Perform an initial render
+            allCourses = courses;
+            applyFiltersAndSort();
         })
         .catch(error => console.error('Error fetching course data:', error));
 

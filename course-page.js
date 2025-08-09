@@ -1,13 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-    // --- 1. APPLY THE CORRECT THEME ON PAGE LOAD ---
-    // This checks localStorage for a saved theme and applies it.
     const savedTheme = localStorage.getItem('theme') || 'light';
     if (savedTheme === 'dark') {
         document.body.classList.add('dark-mode');
     }
 
-    // --- 2. GET COURSE DATA AND POPULATE THE PAGE ---
     // Get the Course ID from the URL
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -22,15 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch('/data.json')
         .then(response => response.json())
         .then(courses => {
-            // Find the specific course that matches the ID from the URL
             const course = courses.find(c => c.id === courseId);
-
             if (!course) {
                 courseTitleEl.textContent = 'Error: Course Not Found';
                 return;
             }
-
-            // Populate the page with the correct data
             document.title = course.title;
             courseTitleEl.textContent = course.title;
 
