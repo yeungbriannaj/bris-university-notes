@@ -44,6 +44,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let filteredCourses = allCourses;
 
+        if (searchTerm) {
+            filteredCourses = filteredCourses.filter(course => {
+                const courseText = searchIndex[course.id] || '';
+                const titleMatch = course.title.toLowerCase().includes(searchTerm);
+                const descriptionMatch = course.description.toLowerCase().includes(searchTerm);
+                const contentMatch = courseText.includes(searchTerm);
+                return titleMatch || descriptionMatch || contentMatch;
+            });
+        }
+
         // Filter by Search Term (Title or Description)
         if (searchTerm) {
             filteredCourses = filteredCourses.filter(course =>
@@ -93,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
         coursesToRender.forEach(course => {
             const cardHTML = `
                 <div class="course-card" data-category="${course.category}">
-                    <a href="courses/course.html?id=${course.id}">
+                    <a href="/courses/course.html?id=${course.id}">
                         <img src="${course.image}" alt="Image for ${course.title}">
                     </a>
                     <a href="courses/course.html?id=${course.id}">
@@ -107,6 +117,17 @@ document.addEventListener('DOMContentLoaded', () => {
             cardContainer.innerHTML += cardHTML;
         });
     }
+
+    Promise.all([
+        fetch('/data.json').then(res => res.json()),
+        fetch('/search-index.json').then(res => res.json())
+    ])
+    .then(([courses, index]) => {
+        allCourses = courses;
+        searchIndex = index;
+        applyFiltersAndSort(); // Perform an initial render
+    })
+    .catch(error => console.error('Error fetching data:', error));
 
     fetch('data.json')
         .then(response => response.json())
