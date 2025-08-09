@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Find the elements on the page we need to update
     const courseTitleEl = document.getElementById('course-title');
-    const courseDescriptionEl = document.getElementById('course-description');
     const documentLinksEl = document.getElementById('document-links');
     const pdfViewerEl = document.getElementById('pdf-viewer');
 
@@ -34,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
             // Populate the page with the correct data
             document.title = course.title;
             courseTitleEl.textContent = course.title;
-            courseDescriptionEl.textContent = course.description;
 
             // Generate the buttons for each document
             if (course.documents.length > 0) {
