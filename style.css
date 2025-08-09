@@ -116,3 +116,23 @@ main {
     background-color: #fff0f5; 
 }
 
+.document-buttons-container {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.document-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.document-button:hover {
+    background-color: #555;
+}
