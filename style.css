@@ -15,21 +15,44 @@ main {
     display: flex;
     flex-wrap: wrap; 
     justify-content: center; 
-    gap: 30px;
+    gap: 25px;
 }
 
 /* Main styling for each course box */
 .course-card {
     text-decoration: none;
-    color: inherit;
     background-color: white;
-    width: 300px; 
-    border-radius: 15px; 
+    width: 186px; 
+    border-radius: 18px; 
     box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
-    padding: 20px;
+    padding: 15px;
     text-align: center;
-    transition: transform 0.2s; /* Small animation for the hover effect */
+    transition: transform 0.2s; 
     transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.course-card a{
+    text-decoration: none;
+}
+.course-card[data-category="compsci"] h2,
+.course-card[data-category="compsci"] p {
+    color: #dd8cbd; 
+}
+.course-card[data-category="stats"] h2,
+.course-card[data-category="stats"] p {
+    color: #7089bf; 
+}
+.course-card[data-category="busan"] h2,
+.course-card[data-category="busan"] p {
+    color: #b383cd; 
+}
+.course-card[data-category="mgmt"] h2,
+.course-card[data-category="mgmt"] p {
+    color: #fdd06e;
+}
+.course-card[data-category="innovent"] h2,
+.course-card[data-category="innovent"] p {
+    color: #7f8d6a;
 }
 
 .course-card:hover {
@@ -39,7 +62,7 @@ main {
 .course-card img {
     max-width: 100%;
     height: auto;
-    border-radius: 10px;
+    border-radius: 18px;
 }
 
 .course-card h2, p {
