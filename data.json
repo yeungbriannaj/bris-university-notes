@@ -1,25 +1,5 @@
 [
     {
-        "id": "110",
-        "title": "COMPSCI 110",
-        "description": "Introduction to Computer Systems",
-        "year": 2023,
-        "semester_num": 2,
-        "category": "compsci",
-        "image": "images/CS110.png",
-        "documents": []
-    },
-    {
-        "id": "130",
-        "title": "COMPSCI 130",
-        "description": "Intro to Software Fundamentals",
-        "year": 2024,
-        "semester_num": 0,
-        "category": "compsci",
-        "image": "images/CS130.png",
-        "documents": []
-    },
-    {
         "id": "210",
         "title": "COMPSCI 210",
         "description": "Computer Organisation",
@@ -30,7 +10,17 @@
         "documents": [
             {
                 "name": "210 Slides",
-                "type": "Slides",
+                "type": "MCQ",
+                "path": "notes/210_S3.pdf"
+            },
+            {
+                "name": "210 Slides",
+                "type": "Cache Notes",
+                "path": "notes/210_S2.pdf"
+            },
+            {
+                "name": "210 Slides",
+                "type": "LC3 Notes",
                 "path": "notes/210_S.pdf"
             }
         ]
@@ -46,8 +36,13 @@
         "documents": [
             {
                 "name": "220 Slides",
-                "type": "Slides",
+                "type": "Graphs",
                 "path": "notes/220_S.pdf"
+            },
+            {
+                "name": "220 Cheatsheet",
+                "type": "Exam Cheatsheet",
+                "path": "notes/220_C.pdf"
             }
         ]
     },
@@ -59,7 +54,13 @@
         "semester_num": 0,
         "category": "mgmt",
         "image": "images/MGMT223.png",
-        "documents": []
+        "documents": [
+            {
+                "name": "223 Document",
+                "type": "All Lecture Notes",
+                "path": "notes/223_D.pdf"
+            }
+        ]
     },
     {
         "id": "230",
@@ -72,8 +73,13 @@
         "documents": [
             {
                 "name": "230 Cheatsheet",
-                "type": "Cheatsheet",
+                "type": "Mid-Sem Cheatsheet",
                 "path": "notes/230_C.pdf"
+            },
+            {
+                "name": "230 Cheatsheet",
+                "type": "Final Exam Cheatsheet",
+                "path": "notes/230_C2.pdf"
             }
         ]
     },
@@ -85,7 +91,13 @@
         "semester_num": 1,
         "category": "busan",
         "image": "images/BUSAN300.png",
-        "documents": []
+        "documents": [
+            {
+                "name": "300 Document",
+                "type": "Python",
+                "path": "notes/300_D.pdf"
+            }
+        ]
     },
     {
         "id": "302",
@@ -95,7 +107,23 @@
         "semester_num": 1,
         "category": "busan",
         "image": "images/BUSAN302.png",
-        "documents": []
+        "documents": [
+            {
+                "name": "302 Slides",
+                "type": "Slides",
+                "path": "notes/302_S.pdf"
+            },
+            {
+                "name": "302 Document",
+                "type": "Week 1-8",
+                "path": "notes/302_D.pdf"
+            },
+            {
+                "name": "302 Document",
+                "type": "Week 9",
+                "path": "notes/302_D2.pdf"
+            }
+        ]
     },
     {
         "id": "309",
@@ -105,7 +133,13 @@
         "semester_num": 2,
         "category": "innovent",
         "image": "images/INNOVENT309.png",
-        "documents": []
+        "documents": [
+            {
+                "name": "309 Slides",
+                "type": "Concept Map",
+                "path": "notes/309_S.pdf"
+            }
+        ]
     },
     {
         "id": "316",
@@ -120,7 +154,22 @@
                 "name": "316 Slides",
                 "type": "Slides",
                 "path": "notes/316_S.pdf"
-            }
+            },
+            {
+                "name": "316 Tutorials",
+                "type": "Tutorials",
+                "path": "notes/316_T.pdf"
+            },
+            {
+                "name": "316 Documents",
+                "type": "Week 1-6",
+                "path": "notes/316_D_W1_6.pdf"
+            },
+            {
+                "name": "316 Documents",
+                "type": "Week 8-9",
+                "path": "notes/316_D_W8_9.pdf"
+            }            
         ]
     },
     {
@@ -134,9 +183,14 @@
         "documents": [
             {
                 "name": "330 Cheatsheet",
-                "type": "Cheatsheet",
+                "type": "Exam Cheatsheet",
                 "path": "notes/330_C.pdf"
-            }
+            },
+            {
+                "name": "330 Document", 
+                "type": "Handout 15-16",
+                "path": "notes/330_H15_16.pdf"
+            }            
         ]
     },
     {
@@ -150,9 +204,19 @@
         "documents": [
             {
                 "name": "345 Document",
-                "type": "Document",
+                "type": "Week 1-6",
                 "path": "notes/345_D.pdf"
-            }
+            },
+            {
+                "name": "345 Document",
+                "type": "Week 7-9",
+                "path": "notes/345_D2.pdf"
+            },
+            {
+                "name": "345 Cheatsheet",
+                "type": "Exam Cheatsheet",
+                "path": "notes/345_C.pdf"
+            }          
         ]
     },
     {
@@ -165,19 +229,14 @@
         "image": "images/STATS380.png",
         "documents": [
             {
-                "name": "380 Slides",
-                "type": "Slides",
-                "path": "notes/380_S.pdf"
+                "name": "380 Document",
+                "type": "All Notes",
+                "path": "notes/380_D2.pdf"
             },
             {
                 "name": "380 Document",
-                "type": "Document",
+                "type": "R Notes",
                 "path": "notes/380_D.pdf"
-            },
-            {
-                "name": "380 Cheatsheet",
-                "type": "Cheatsheet",
-                "path": "notes/380_C.pdf"
             }
         ]
     },
@@ -209,6 +268,12 @@
         "semester_num": 2,
         "category": "busan",
         "image": "images/BUSAN305.png",
-        "documents": []
+        "documents": [
+            {
+                "name": "305 Slides",
+                "type": "Week 1-2 Exercise",
+                "path": "notes/305_S.pdf"
+            }
+        ]
     }
 ]
