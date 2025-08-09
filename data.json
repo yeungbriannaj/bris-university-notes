@@ -1,0 +1,214 @@
+[
+    {
+        "id": "110",
+        "title": "COMPSCI 110",
+        "description": "Introduction to Computer Systems",
+        "year": 2023,
+        "semester_num": 2,
+        "category": "compsci",
+        "image": "images/default.png",
+        "documents": []
+    },
+    {
+        "id": "130",
+        "title": "COMPSCI 130",
+        "description": "Intro to Software Fundamentals",
+        "year": 2024,
+        "semester_num": 0,
+        "category": "compsci",
+        "image": "images/default.png",
+        "documents": []
+    },
+    {
+        "id": "210",
+        "title": "COMPSCI 210",
+        "description": "Computer Organisation",
+        "year": 2024,
+        "semester_num": 1,
+        "category": "compsci",
+        "image": "images/210_S.png",
+        "documents": [
+            {
+                "name": "210 Slides",
+                "type": "Slides",
+                "path": "notes/210_S.pdf"
+            }
+        ]
+    },
+    {
+        "id": "220",
+        "title": "COMPSCI 220",
+        "description": "Algorithms and Data Structures",
+        "year": 2024,
+        "semester_num": 1,
+        "category": "compsci",
+        "image": "images/220_S.png",
+        "documents": [
+            {
+                "name": "220 Slides",
+                "type": "Slides",
+                "path": "notes/220_S.pdf"
+            }
+        ]
+    },
+    {
+        "id": "223",
+        "title": "MGMT 223",
+        "description": "Understanding Work and People",
+        "year": 2025,
+        "semester_num": 0,
+        "category": "mgmt",
+        "image": "images/default.png",
+        "documents": []
+    },
+    {
+        "id": "230",
+        "title": "COMPSCI 230",
+        "description": "Object Oriented Software Development",
+        "year": 2024,
+        "semester_num": 2,
+        "category": "compsci",
+        "image": "images/230_C.png",
+        "documents": [
+            {
+                "name": "230 Cheatsheet",
+                "type": "Cheatsheet",
+                "path": "notes/230_C.pdf"
+            }
+        ]
+    },
+    {
+        "id": "300",
+        "title": "BUSAN 300",
+        "description": "Data Wrangling and Big Data",
+        "year": 2025,
+        "semester_num": 1,
+        "category": "busan",
+        "image": "images/default.png",
+        "documents": []
+    },
+    {
+        "id": "302",
+        "title": "BUSAN 302",
+        "description": "Machine Learning",
+        "year": 2025,
+        "semester_num": 1,
+        "category": "busan",
+        "image": "images/default.png",
+        "documents": []
+    },
+    {
+        "id": "309",
+        "title": "INNOVENT 309",
+        "description": "Responsible Innovation",
+        "year": 2024,
+        "semester_num": 2,
+        "category": "innovent",
+        "image": "images/default.png",
+        "documents": []
+    },
+    {
+        "id": "316",
+        "title": "COMPSCI 316",
+        "description": "Cyber Security",
+        "year": 2024,
+        "semester_num": 2,
+        "category": "compsci",
+        "image": "images/316_S.png",
+        "documents": [
+            {
+                "name": "316 Slides",
+                "type": "Slides",
+                "path": "notes/316_S.pdf"
+            }
+        ]
+    },
+    {
+        "id": "330",
+        "title": "STATS 330",
+        "description": "Statistical Modelling",
+        "year": 2024,
+        "semester_num": 2,
+        "category": "stats",
+        "image": "images/330_C.png",
+        "documents": [
+            {
+                "name": "330 Cheatsheet",
+                "type": "Cheatsheet",
+                "path": "notes/330_C.pdf"
+            }
+        ]
+    },
+    {
+        "id": "345",
+        "title": "COMPSCI 345",
+        "description": "Human-computer Interaction",
+        "year": 2025,
+        "semester_num": 1,
+        "category": "compsci",
+        "image": "images/345_D.png",
+        "documents": [
+            {
+                "name": "345 Document",
+                "type": "Document",
+                "path": "notes/345_D.pdf"
+            }
+        ]
+    },
+    {
+        "id": "380",
+        "title": "STATS 380",
+        "description": "Statistical Computing",
+        "year": 2025,
+        "semester_num": 1,
+        "category": "stats",
+        "image": "images/380_D.png",
+        "documents": [
+            {
+                "name": "380 Slides",
+                "type": "Slides",
+                "path": "notes/380_S.pdf"
+            },
+            {
+                "name": "380 Document",
+                "type": "Document",
+                "path": "notes/380_D.pdf"
+            },
+            {
+                "name": "380 Cheatsheet",
+                "type": "Cheatsheet",
+                "path": "notes/380_C.pdf"
+            }
+        ]
+    },
+    {
+        "id": "235",
+        "title": "COMPSCI 235",
+        "description": "Software Development Methodology",
+        "year": 2025,
+        "semester_num": 2,
+        "category": "compsci",
+        "image": "images/default.png",
+        "documents": []
+    },
+    {
+        "id": "335",
+        "title": "COMPSCI 335",
+        "description": "Web Prog and Distributed Services",
+        "year": 2025,
+        "semester_num": 2,
+        "category": "compsci",
+        "image": "images/default.png",
+        "documents": []
+    },
+    {
+        "id": "305",
+        "title": "BUSAN 305",
+        "description": "Simulation Modelling",
+        "year": 2025,
+        "semester_num": 2,
+        "category": "compsci",
+        "image": "images/default.png",
+        "documents": []
+    }
+]
