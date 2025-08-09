@@ -54,13 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Filter by Search Term (Title or Description)
-        if (searchTerm) {
-            filteredCourses = filteredCourses.filter(course =>
-                course.title.toLowerCase().includes(searchTerm) ||
-                course.description.toLowerCase().includes(searchTerm)
-            );
-        }
+
         // Filter by Subject
         if (selectedSubject !== 'all') {
             filteredCourses = filteredCourses.filter(course => course.category === selectedSubject);
@@ -125,6 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(([courses, index]) => {
         allCourses = courses;
         searchIndex = index;
+        console.log("Search Index Loaded:", searchIndex); 
         applyFiltersAndSort(); // Perform an initial render
     })
     .catch(error => console.error('Error fetching data:', error));
