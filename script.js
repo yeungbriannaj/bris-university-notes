@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </a>
                     <a href="courses/course.html?id=${course.id}">
                         <h2>${course.title}</h2>
-                        <p><strong>${course.year} ${course.semester_num === 0 ? 'Summer School' : 'SEMESTER ' + course.semester_num}</strong></p><br>
+                        <p><strong>${course.year} ${course.semester_num === 0 ? 'Summer School' : 'SEMESTER ' + course.semester_num}</strong></p>
                         <p class="card-description">${course.description}</p>
                         
                     </a>
