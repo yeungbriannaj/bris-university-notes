@@ -28,11 +28,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const cardContainer = document.getElementById('card-container');
     const searchInput = document.getElementById('searchInput');
+    const snippetsContainer = document.getElementById('search-snippets-container');
     const subjectFilter = document.getElementById('subject-filter');
     const yearFilter = document.getElementById('year-filter');
     const levelFilter = document.getElementById('level-filter');
     const sortBy = document.getElementById('sort-by');
     let allCourses = []; //Store master list of courses
+    let searchIndex = {};
 
     // THE MASTER FUNCTION TO APPLY FILTERS AND SORT
     function applyFiltersAndSort() {
@@ -43,13 +45,28 @@ document.addEventListener('DOMContentLoaded', () => {
         const sortValue = sortBy.value;
 
         let filteredCourses = allCourses;
+        let searchSnippets = [];
 
-        if (searchTerm) {
+        if (searchTerm.length > 2) { // Only search if term is 3+ characters
             filteredCourses = filteredCourses.filter(course => {
                 const courseText = searchIndex[course.id] || '';
                 const titleMatch = course.title.toLowerCase().includes(searchTerm);
                 const descriptionMatch = course.description.toLowerCase().includes(searchTerm);
-                const contentMatch = courseText.includes(searchTerm);
+                let contentMatch = false;
+
+                if (courseText.includes(searchTerm)) {
+                    contentMatch = true;
+                    // Find all occurrences of the search term in this course's text
+                    const regex = new RegExp(searchTerm, 'gi'); // 'g' for global, 'i' for case-insensitive
+                    let match;
+                    while ((match = regex.exec(courseText)) !== null) {
+                        const snippet = createSnippet(courseText, match.index, searchTerm.length);
+                        searchSnippets.push({
+                            courseTitle: course.title,
+                            snippetHTML: snippet
+                        });
+                    }
+                }
                 return titleMatch || descriptionMatch || contentMatch;
             });
         }
@@ -90,6 +107,35 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         renderCards(filteredCourses);
+        renderSnippets(searchSnippets);
+    }
+
+    function createSnippet(text, index, termLength) {
+        const snippetRadius = 110;
+        let start = Math.max(0, index - snippetRadius);
+        let end = Math.min(text.length, index + termLength + snippetRadius);
+        let snippet = text.substring(start, end);
+        const searchTermRegex = new RegExp(searchInput.value, 'gi');
+        snippet = snippet.replace(searchTermRegex, (match) => `<mark>${match}</mark>`);
+        if (start > 0) snippet = '... ' + snippet;
+        if (end < text.length) snippet = snippet + ' ...';
+        return snippet;
+    }
+
+    function renderSnippets(snippets) {
+        if (snippets.length === 0) {
+            snippetsContainer.innerHTML = ''; // Clear if no results
+            return;
+        }
+        
+        const html = snippets.map(item => `
+            <div class="snippet-result">
+                <div class="snippet-header">${item.courseTitle}</div>
+                <p class="snippet-text">${item.snippetHTML}</p>
+            </div>
+        `).join('');
+
+        snippetsContainer.innerHTML = html;
     }
 
     function renderCards(coursesToRender) {
