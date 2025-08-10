@@ -302,3 +302,13 @@ body.dark-mode .snippet-text mark {
     background-color: #fff8b8;
     color: black;
 }
+
+.snippet-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+.snippet-link:hover .snippet-result {
+    border-color: var(--color-header);
+    transform: scale(1.01);
+}
