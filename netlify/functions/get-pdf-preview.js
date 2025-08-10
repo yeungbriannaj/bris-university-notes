@@ -1,4 +1,3 @@
-
 const fs = require('fs').promises;
 const path = require('path');
 const { PDFDocument } = require('pdf-lib');
@@ -21,21 +20,22 @@ exports.handler = async function (event, context) {
         }
         
         const originalDocPath = course.documents[0].path;
-        const pdfPath = path.resolve(__dirname, '../../public/', doc.path);
+        const pdfPath = path.resolve(__dirname, '../../public/', originalDocPath);
+
+        // Read the original PDF and create a new one
         const originalPdfBytes = await fs.readFile(pdfPath);
         const originalPdf = await PDFDocument.load(originalPdfBytes);
         const previewPdf = await PDFDocument.create();
+
+        // Copy just the first page
         const [firstPage] = await previewPdf.copyPages(originalPdf, [0]);
         previewPdf.addPage(firstPage);
         const previewPdfBytes = await previewPdf.save();
 
         return {
             statusCode: 200,
-            headers: {
-                'Content-Type': 'application/pdf',
-                'Content-Length': previewPdfBytes.length,
-            },
-            body: Buffer.from(previewPdfBytes).toString('base64'), // Return as Base64 for Netlify
+            headers: { 'Content-Type': 'application/pdf' },
+            body: Buffer.from(previewPdfBytes).toString('base64'),
             isBase64Encoded: true,
         };
 
