@@ -130,7 +130,7 @@ header {
 }
 
 #theme-toggle:checked + .toggle-label {
-    background-color: #F78CB4;
+    background-color: #fff9fc;
 }
 
 #theme-toggle:checked + .toggle-label::after {
@@ -300,7 +300,7 @@ header {
 }
 body.dark-mode .snippet-text mark {
     background-color: #fff8b8;
-    color: black;
+    color: #E8709F;
 }
 
 .snippet-link {
@@ -312,3 +312,4 @@ body.dark-mode .snippet-text mark {
     border-color: var(--color-header);
     transform: scale(1.01);
 }
+
