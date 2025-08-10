@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     button.textContent = `View ${doc.type}`;
                     button.className = 'document-button';
                     button.addEventListener('click', () => {
-                        pdfViewerEl.src = `/${doc.path}`;
+                        pdfViewerEl.src = `../${doc.path}`;
                     });
                     documentLinksEl.appendChild(button);
                 });

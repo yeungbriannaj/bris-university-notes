@@ -7,7 +7,7 @@ async function buildIndex() {
 
     try {
         // Read main data file to know which PDFs to process
-        const dataFilePath = path.join(__dirname, 'data.json');
+        const dataFilePath = path.join(__dirname, '..', 'public/data.json');
         const dataFileContent = await fs.readFile(dataFilePath, 'utf8');
         const courses = JSON.parse(dataFileContent);
         const searchIndex = {};
@@ -16,7 +16,7 @@ async function buildIndex() {
         for (const course of courses) {
             let fullCourseText = '';
             for (const doc of course.documents) {
-                const pdfPath = path.join(__dirname, doc.path);
+                const pdfPath = path.join(__dirname, '..', 'public/', doc.path);
                 const dataBuffer = await fs.readFile(pdfPath);
                 const pdfData = await pdf(dataBuffer);
                 // Add the text from this PDF to our full course text
@@ -26,7 +26,7 @@ async function buildIndex() {
             console.log(`Indexed text for course ${course.id}`);
         }
         // Write final index to a new file
-        const indexFilePath = path.join(__dirname, 'search-index.json');
+        const indexFilePath = path.join(__dirname, '..', 'public/search-index.json');
         await fs.writeFile(indexFilePath, JSON.stringify(searchIndex, null, 2));
         console.log('✅ Search index built successfully!');
         console.log(`Index file created at: ${indexFilePath}`);

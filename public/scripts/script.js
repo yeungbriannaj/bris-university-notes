@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
         course.title
       }">
                     </a>
-                    <a href="courses/course.html?id=${course.id}">
+                    <a href="/courses/course.html?id=${course.id}">
                         <h2>${course.title}</h2>
                         <p><strong>${course.year} ${
         course.semester_num === 0
@@ -188,7 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   Promise.all([
-    fetch("/data.json").then((res) => res.json()),
+    fetch('/data.json').then((res) => res.json()),
     fetch("/search-index.json").then((res) => res.json()),
   ])
     .then(([courses, index]) => {
