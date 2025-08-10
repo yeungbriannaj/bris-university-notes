@@ -13,7 +13,7 @@ exports.handler = async function (event, context) {
 
     try {
         // --- 1. Find the path to the original PDF ---
-        const dataPath = path.resolve(__dirname, '../../public/data.json');
+        const dataPath = path.resolve(process.cwd(), 'public/data.json');
         const dataFile = await fs.readFile(dataPath, 'utf8');
         const courses = JSON.parse(dataFile);
         
@@ -24,7 +24,7 @@ exports.handler = async function (event, context) {
         
         // We'll just create a preview for the FIRST document listed for that course.
         const originalDocPath = course.documents[0].path;
-        const pdfPath = path.resolve(__dirname, '../../public/', originalDocPath);
+        const pdfPath = path.resolve(process.cwd(), 'public/', doc.path);
 
         // --- 2. Read the original PDF and create a new one ---
         const originalPdfBytes = await fs.readFile(pdfPath);
